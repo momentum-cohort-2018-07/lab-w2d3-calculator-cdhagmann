@@ -34,13 +34,13 @@ function calculate() {
 
 function buttonClick(e) {
     var button = e.toElement;
-    appendText(button.innerText)
+    appendText(button.innerText);
 }
 
 function appendText(text) {
     if (display.classList.contains('results')) {
         display.classList.remove('results');
-        if ('+-*/'.includes(text)) {
+        if ('+-*/÷×'.includes(text)) {
             display.innerText = display.innerText.split("\n")[1]; // store result if starting with operation
         } else {
             display.innerText = ''; // clear display if clicking on new number
