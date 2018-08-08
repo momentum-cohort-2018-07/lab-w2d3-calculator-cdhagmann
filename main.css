@@ -25,12 +25,12 @@ body {
 .button {
   height: 24%;
   width: 24%;
-  /* border-radius: 50%; */
   text-align: center;
   line-height: 150px;
   font-size: 100px;
   margin: 0.5%;
   color: #fafafa;
+  -webkit-text-stroke: 1px #333333;
 }
 
 .operation {
@@ -48,9 +48,11 @@ body {
 .display {
   height: 150px;
   width: 74%;
-  padding: 10px;
+  padding: 0 10px;
   margin: 0.5%;
   text-align: right;
-  line-height: 50px;
   background-color: #333333;
+  color: #fafafa;
+  font-size: 70px;
+  vertical-align: text-top;
 }
