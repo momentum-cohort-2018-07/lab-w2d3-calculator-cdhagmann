@@ -1,45 +1,47 @@
 var display = document.getElementById("display");
 
-for (var button of document.getElementsByClassName("append")) {
+for (var button of document.getElementsByClassName("button")) {
     button.addEventListener("click", buttonClick);
 }
 
-clear = document.getElementById('clear');
-clear.addEventListener("click", function () {
-    display.innerHTML = '';
-});
+document.addEventListener('keypress', keyPress);
 
-equal = document.getElementById('equal');
-equal.addEventListener("click", calculate);
+function buttonClick(e) {
+    var button = e.toElement;
+    main(button.innerText);
+}
 
-document.addEventListener('keypress', function () {
-    if (event.key === 'Enter') {
+function keyPress (e) {
+    main(e.key);
+}
+
+function main(keyValue) {
+    if (keyValue === 'Enter' || keyValue === "=") {
         calculate();
-    } else if ('0123456789.+-*/'.includes(event.key)) {
-        appendText(event.key);
+    } else if ('0123456789.+-*/÷×()^%'.includes(keyValue)) {
+        appendText(keyValue);
     } else {
-        display.innerHTML = '';
+        displayClear();
     }
-});
+}
+
+function displayClear() {
+    display.innerHTML = '';
+}
 
 function calculate() {
     try {
         display.innerText += '\n' + math.round(math.eval(display.innerText), 3);
-        display.classList.add('results');
+        display.classList.add('resulted');
     } catch (error) {
-        display.innerHTML = '';
+        displayClear()
     }
 }
 
-function buttonClick(e) {
-    var button = e.toElement;
-    appendText(button.innerText);
-}
-
-function appendText(text) {
-    if (display.classList.contains('results')) {
-        display.classList.remove('results');
-        if ('+-*/÷×'.includes(text)) {
+function appendText(text) { 
+    if (display.classList.contains('resulted')) {
+        display.classList.remove('resulted');
+        if ('+-*/÷×%^'.includes(text)) {
             display.innerText = display.innerText.split("\n")[1]; // store result if starting with operation
         } else {
             display.innerText = ''; // clear display if clicking on new number
@@ -48,13 +50,14 @@ function appendText(text) {
 
     // Replace special characters to make math.eval work in
     var newText = '';
+    var displayText = display.innerText;
     if (text === '÷') {
         newText = '/';
     } else if (text === '×') {
         newText = '*';
-    } else if (text === '.' && display.innerText.length === 0) {
+    } else if (text === '.' && (displayText.length === 0 || '+-*/'.includes(displayText.substr(displayText.length - 1)))) {
         newText = '0.';
-    } else if ('0123456789.+-*/'.includes(text)) {
+    } else {
         newText = text;
     }
 

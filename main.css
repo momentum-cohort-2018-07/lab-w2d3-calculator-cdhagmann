@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  max-width: 650px;
+  max-width: 750px;
   margin: 0 auto;
   
 }
@@ -24,8 +24,8 @@ body {
 }
 
 .button {
-  height: 24%;
-  width: 24%;
+  height: 19%;
+  width: 19%;
   text-align: center;
   line-height: 150px;
   font-size: 100px;
@@ -42,13 +42,13 @@ body {
   background-color: #004e81;
 }
 
-#clear {
+.clear {
   background-color: #f1d302;
 }
 
 .display {
   height: 150px;
-  width: 74%;
+  width: 79%;
   padding: 0 10px;
   margin: 0.5%;
   text-align: right;
