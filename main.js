@@ -55,7 +55,7 @@ function appendText(text) {
         newText = '/';
     } else if (text === '×') {
         newText = '*';
-    } else if (text === '.' && (displayText.length === 0 || '+-*/'.includes(displayText.substr(displayText.length - 1)))) {
+    } else if (text === '.' && (displayText.length === 0 || '+-*/%^'.includes(displayText.substr(displayText.length - 1)))) {
         newText = '0.';
     } else {
         newText = text;
