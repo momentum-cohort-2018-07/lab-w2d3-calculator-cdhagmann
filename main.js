@@ -34,7 +34,7 @@ function calculate() {
         display.innerText += '\n' + math.round(math.eval(display.innerText), 3);
         display.classList.add('resulted');
     } catch (error) {
-        displayClear()
+        displayClear();
     }
 }
 
