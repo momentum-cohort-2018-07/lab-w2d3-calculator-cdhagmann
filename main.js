@@ -7,26 +7,23 @@ for (var button of document.getElementsByClassName("button")) {
 document.addEventListener('keypress', keyPress);
 
 function buttonClick(e) {
-    var button = e.toElement;
-    main(button.innerText);
+    var buttonText = e.target.innerText;
+    main(buttonText);
 }
 
-function keyPress (e) {
-    main(e.key);
+function keyPress(e) {
+    var keyText = e.key;
+    main(keyText);
 }
 
-function main(keyValue) {
-    if (keyValue === 'Enter' || keyValue === "=") {
+function main(text) {
+    if (text === 'Enter' || text === "=") {
         calculate();
-    } else if ('0123456789.+-*/÷×()^%'.includes(keyValue)) {
-        appendText(keyValue);
+    } else if ('0123456789.+-*/÷×()^%'.includes(text)) {
+        appendText(text);
     } else {
         displayClear();
     }
-}
-
-function displayClear() {
-    display.innerHTML = '';
 }
 
 function calculate() {
@@ -38,7 +35,7 @@ function calculate() {
     }
 }
 
-function appendText(text) { 
+function appendText(text) {
     if (display.classList.contains('resulted')) {
         display.classList.remove('resulted');
         if ('+-*/÷×%^'.includes(text)) {
@@ -62,4 +59,8 @@ function appendText(text) {
     }
 
     display.innerText += newText;
+}
+
+function displayClear() {
+    display.innerHTML = '';
 }
