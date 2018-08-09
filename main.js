@@ -23,7 +23,6 @@ document.addEventListener('keypress', function () {
 });
 
 function calculate() {
-    display.classList.add('results');
     try {
         display.innerText += '\n' + math.round(math.eval(display.innerText), 3);
         display.classList.add('results');

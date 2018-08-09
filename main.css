@@ -10,9 +10,9 @@ html {
 }
 
 body {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
-  background-color: black;
+  
 }
 
 .calc {
@@ -20,6 +20,7 @@ body {
   flex-flow: wrap;
   padding: 15px;
   margin: 15px;
+  background-color: black;
 }
 
 .button {
@@ -28,7 +29,7 @@ body {
   text-align: center;
   line-height: 150px;
   font-size: 100px;
-  margin: 0.5%;
+  margin: .5%;
   color: #fafafa;
   -webkit-text-stroke: 1px #333333;
 }
@@ -55,4 +56,5 @@ body {
   color: #fafafa;
   font-size: 70px;
   vertical-align: text-top;
+  overflow: auto;
 }
