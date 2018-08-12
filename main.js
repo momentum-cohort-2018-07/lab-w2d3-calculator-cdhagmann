@@ -30,7 +30,7 @@ function calculate() {
     try {
         display.innerText += '\n' + math.round(math.eval(display.innerText), 3);
     } catch (error) {
-        display.innerText += '\n' + 'Error'
+        display.innerText += '\n' + 'Error';
     }
     display.classList.add('resulted');
 }
@@ -38,7 +38,7 @@ function calculate() {
 function appendText(text) {
     if (display.classList.contains('resulted')) {
         display.classList.remove('resulted');
-        if ('+-*/÷×%^'.includes(text)) {
+        if ('+-*/÷×%^'.includes(text) && display.innerText.split("\n")[1] !== 'Error') {
             display.innerText = display.innerText.split("\n")[1]; // store result if starting with operation
         } else {
             display.innerText = ''; // clear display if clicking on new number
