@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #fafafa;
+    font-family: "Courier New", Courier, monospace;
+}
+
+body {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.calc {
+    display: flex;
+    flex-flow: wrap;
+    padding: 15px;
+    margin: 15px;
+    background-color: black;
+}
+
+.button {
+    height: 19%;
+    width: 19%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 100px;
+    margin: .5%;
+    color: #fafafa;
+    -webkit-text-stroke: 1px #333333;
+}
+
+.operation {
+    background-color: #cc0000;
+}
+
+.number {
+    background-color: #004e81;
+}
+
+.clear {
+    background-color: #f1d302;
+}
+
+.display {
+    height: 150px;
+    width: 79%;
+    padding: 0 10px;
+    margin: 0.5%;
+    text-align: right;
+    background-color: #333333;
+    color: #fafafa;
+    font-size: 70px;
+    vertical-align: text-top;
+    overflow: auto;
+}
